@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * Drupal snippet to be use in any drupal custom module
  * [set tracking code by log all data]
  * @param  array  $error_log [description]
  * @return [type]            [description]
@@ -12,7 +13,7 @@ function put_data_file_log($error_log = array()) {
     $error_log = $border . print_r($error_log, true) . $border;
     $error_log['user_id'] = $user->uid;   
     //Save string to log in drupal root, use FILE_APPEND to append.
-    file_put_contents(DRUPAL_ROOT . '/tmp/log_qiz_section'. date("Y-m-d--h-i") . '.txt', $error_log, FILE_APPEND);
+    file_put_contents(DRUPAL_ROOT . '/tmp/my_site_log_'. date("Y-m-d--h-i") . '.txt', $error_log, FILE_APPEND);
     //Uncomment below code to save string to your root dir, use FILE_APPEND to append.
     //file_put_contents('./log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
     return true;
