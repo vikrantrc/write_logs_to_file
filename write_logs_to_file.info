@@ -1,0 +1,4 @@
+name = Write Logs In File
+description = Writes execution log to certain file in "tmp" directory.
+package = Development
+core = 7.x
